@@ -30,26 +30,26 @@ plan
 - interfaces are independent of rulesets; rulesets depend on them but do not own them.
 - an implementation *may* bring up an undefined interface via inference from ruleset
   if the interface plugin permits
-
-ruleset:
-   name: myruleset
-    - outside_bind: [any named_interface { defined_interface }]
-      outside_targets: 10.249.29.149
-      inside_sources:
-         - 10.176.8.12/24
-      inside_bind: [any named_interface {defined_interface} 10.299.10.12 ]
-      ports:
-         - 80/tcp
-         - 443/tcp
-    - outside_bind: [any named_interface { defined_interface }]
-      outside_targets: 10.241.80.12
-      inside_sources:
-         - 10.0.8.12/24
-      inside_bind: [any named_interface {defined_interface} ]
-      ports:
-         - 80/tcp
-         - 443/tcp
-         
+   ::
+   ruleset:
+      name: myruleset
+       - outside_bind: [any named_interface { defined_interface }]
+         outside_targets: 10.249.29.149
+         inside_sources:
+            - 10.176.8.12/24
+         inside_bind: [any named_interface {defined_interface} 10.299.10.12 ]
+         ports:
+            - 80/tcp
+            - 443/tcp
+       - outside_bind: [any named_interface { defined_interface }]
+         outside_targets: 10.241.80.12
+         inside_sources:
+            - 10.0.8.12/24
+         inside_bind: [any named_interface {defined_interface} ]
+         ports:
+            - 80/tcp
+            - 443/tcp
+            
 
   
          
